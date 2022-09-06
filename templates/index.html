@@ -14,10 +14,14 @@
   {% block content %}
     <h1>{% block title %} Bem-vindo ao Sinuca da Massa {% endblock %}</h1>
     {% for player in players %}
-      <p href="#">
-          <h2>{{ player['player'] }}</h2>
-      </p>
+      <a href="{{ url_for('player', player_id = player['id']) }}">
+        <h2>{{ player['player'] }}</h2>
+      </a>
       <span class="badge badge-primary">{{ player['score'] }}</span>
+      <span class="badge badge-primary">{{ player['created'] }}</span>
+      <a href="{{ url_for('edit', id = player['id']) }}">
+            <span class="badge badge-warning">Editar</span>
+      </a>
       <hr>
     {% endfor %}
   {% endblock %}

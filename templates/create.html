@@ -3,9 +3,9 @@
 {% block content %}
   <h1>{% block title %} Criar novo Jogador {% endblock %}</h1>
   
-  <form method="post">
+  <form method="POST">
       <div class="form-group">
-          <label for="Player">Jogador</label>
+          <label for="player">Jogador</label>
           <input type="text" name="player"
              placeholder="Nome do Jogador" class="form-control"
              value="{{ request.form['player'] }}"></input>
