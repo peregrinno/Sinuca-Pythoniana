@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Sinuca</title>
+</head>
+<body>
+  {% extends 'base.html' %}
+
+  {% block content %}
+    <h1>{% block title %} Bem-vindo ao Sinuca da Massa {% endblock %}</h1>
+    {% for player in players %}
+      <p href="#">
+          <h2>{{ player['player'] }}</h2>
+      </p>
+      <span class="badge badge-primary">{{ player['score'] }}</span>
+      <hr>
+    {% endfor %}
+  {% endblock %}
+</body>
+</html>

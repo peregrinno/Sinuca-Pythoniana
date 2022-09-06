@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{% block title %} Criar novo Jogador {% endblock %}</h1>
+  
+  <form method="post">
+      <div class="form-group">
+          <label for="Player">Jogador</label>
+          <input type="text" name="player"
+             placeholder="Nome do Jogador" class="form-control"
+             value="{{ request.form['player'] }}"></input>
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
+  </form>
+{% endblock %}
